@@ -16,6 +16,9 @@ namespace TopLearn.Web.Pages.Courses
 
         public CoursesListForAdminViewModel CoursesViewModel { get; set; }
 
+        [BindProperty]
+        public int TakeCount { get; set; } = 10;
+
         public void OnGet()
         {
             CoursesViewModel = _courseService.GetCoursesForAdmin();

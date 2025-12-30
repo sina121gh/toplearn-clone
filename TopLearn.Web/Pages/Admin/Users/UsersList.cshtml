@@ -33,15 +33,17 @@
                         <form>
                             <div class="row mb-3">
 
+                                <input id="pageId" type="hidden" name="pageId" />
+
                                 <div class="col-2">
-                                    <input name="take" type="number" class="form-control form-control-sm" placeholder="تعداد نمایش" />
+                                    <input asp-for="TakeCount" type="number" class="form-control form-control-sm" placeholder="تعداد نمایش" />
                                 </div>
 
                                 <div class="col-4">
-                                    <input name="userName" type="text" class="form-control form-control-sm" placeholder="نام کاربری">
+                                    <input asp-for="SearchByUserName" type="text" class="form-control form-control-sm" placeholder="نام کاربری">
                                 </div>
                                 <div class="col-4">
-                                    <input name="email" type="text" class="form-control form-control-sm" placeholder="ایمیل">
+                                    <input asp-for="SearchByEmail" type="text" class="form-control form-control-sm" placeholder="ایمیل">
                                 </div>
                                 <div class="col-2">
                                     <div class="row">
@@ -97,20 +99,20 @@
                         <div class="dataTables_paginate paging_simple_numbers">
                             <ul class="pagination">
                                 <li class="paginate_button page-item previous @(!Model.UsersViewModel.HasPreviousPage ? "disabled" : "")" id="example1_previous">
-                                    <a href="/admin/users?pageId=@(Model.UsersViewModel.CurrentPage - 1)" class="page-link">
+                                    <a onclick="changePage(@Model.UsersViewModel.CurrentPage - 1)" href="#" class="page-link">
                                         قبلی
                                     </a>
                                 </li>
                                 @for (int i = 1; i <= Model.UsersViewModel.PageCount; i++)
                                 {
                                     <li class="paginate_button page-item @(Model.UsersViewModel.CurrentPage == i ? "active" : "")">
-                                        <a href="/admin/users/?pageId=@i" class="page-link">
+                                        <a onclick="changePage(@i)" href="#" class="page-link">
                                             @i
                                         </a>
                                     </li>
                                 }
                                 <li class="paginate_button page-item next @(!Model.UsersViewModel.HasNextPage ? "disabled" : "")" id="example1_next">
-                                    <a href="/admin/users?pageId=@(Model.UsersViewModel.CurrentPage + 1)" class="page-link">
+                                    <a onclick="changePage(@Model.UsersViewModel.CurrentPage + 1)" href="#" class="page-link">
                                         بعدی
                                     </a>
                                 </li>
@@ -126,8 +128,16 @@
 
 @section Scripts {
 
-    <script>
 
+        <script>
+         function changePage(pageId) {
+            $('#pageId').val(pageId);
+            filterUsers();
+          }
+
+        function filterUsers() {
+            $("form").submit();
+        }
         const showSwal = (id, title) => {
             Swal.fire({
                 title: `آیا از حذف <u>${title}</u> مطمئن هستید؟`,
