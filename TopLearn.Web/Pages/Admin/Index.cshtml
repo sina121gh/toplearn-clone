@@ -1,5 +1,184 @@
 ﻿@page
 @model TopLearn.Web.Pages.Admin.IndexModel
 @{
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1 class="m-0 text-dark">داشبورد</h1>
+                </div><!-- /.col -->
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-left">
+                        <li class="breadcrumb-item"><a href="/admin">داشبورد</a></li>
+                    </ol>
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+
+
+    <section class="content">
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-info">
+                        <div class="inner">
+                            <h3>@Model.DashboardViewModel.TotalOrderAmountInMonth.ToString("#,0") تومان</h3>
+
+                            <p>مجموع سفارشات ماه</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-bag"></i>
+                        </div>
+
+                        <a href="" class="small-box-footer">تعداد سفارشات: @Model.DashboardViewModel.CourseCount</a>
+                    </div>
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-success">
+                        <div class="inner">
+                            <h3>@Model.DashboardViewModel.CourseCount</h3>
+
+                            <p>تعداد دوره ها</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-stats-bars"></i>
+                        </div>
+                        <a href="/admin/courses" class="small-box-footer">اطلاعات بیشتر <i class="fa fa-arrow-circle-left"></i></a>
+                    </div>
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-warning">
+                        <div class="inner">
+                            <h3>@Model.DashboardViewModel.UserCount</h3>
+
+                            <p>کاربران ثبت شده</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-person-add"></i>
+                        </div>
+                        <a href="/admin/users" class="small-box-footer">اطلاعات بیشتر <i class="fa fa-arrow-circle-left"></i></a>
+                    </div>
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-danger">
+                        <div class="inner">
+                            <h3>@Model.DashboardViewModel.TeacherCount</h3>
+
+                            <p>تعداد اساتید</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-pie-graph"></i>
+                        </div>
+                        <a href="#" class="small-box-footer">اطلاعات بیشتر <i class="fa fa-arrow-circle-left"></i></a>
+                    </div>
+                </div>
+                <!-- ./col -->
+            </div>
+            <!-- /.row -->
+
+        </div>
+
+        <div class="row hide">
+
+            <!-- BAR CHART -->
+            <div class="card card-success">
+                <div class="card-header">
+                    <h3 class="card-title">مقایسه تعداد خرید</h3>
+
+                    <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-widget="collapse">
+                            <i class="fa fa-minus"></i>
+                        </button>
+                        <button type="button" class="btn btn-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="chart">
+                        <canvas id="barChart" style="height:230px"></canvas>
+                    </div>
+                </div>
+                <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+        </div>
+
+    </section>
+
+
+
 }
 
+@section Scripts {
+    <script>
+        $(function () {
+
+                var areaChartData = {
+          labels  : ['فروردین', 'اردیبهشت', 'خرداد', 'تیر', 'مرداد', 'شهریور', 'مهر', 'آبان', 'آذر', 'دی', 'بهمن', 'اسفند'],
+          datasets: [
+            {
+              label               : 'Electronics',
+              fillColor           : 'rgba(210, 214, 222, 1)',
+              strokeColor         : 'rgba(210, 214, 222, 1)',
+              pointColor          : 'rgba(210, 214, 222, 1)',
+              pointStrokeColor    : '#c1c7d1',
+              pointHighlightFill  : '#fff',
+              pointHighlightStroke: 'rgba(220,220,220,1)',
+              data                : [65, 59, 80, 81, 56, 55, 40]
+            }
+          ]
+        }
+
+          //-------------
+          //- BAR CHART -
+          //-------------
+          var barChartCanvas                   = $('#barChart').get(0).getContext('2d')
+          var barChart                         = new Chart(barChartCanvas)
+          var barChartData                     = areaChartData
+          barChartData.datasets[0].fillColor   = '#00a65a'
+          barChartData.datasets[0].strokeColor = '#00a65a'
+          barChartData.datasets[0].pointColor  = '#00a65a'
+          var barChartOptions                  = {
+            //Boolean - Whether the scale should start at zero, or an order of magnitude down from the lowest value
+            scaleBeginAtZero        : true,
+            //Boolean - Whether grid lines are shown across the chart
+            scaleShowGridLines      : true,
+            //String - Colour of the grid lines
+            scaleGridLineColor      : 'rgba(0,0,0,.05)',
+            //Number - Width of the grid lines
+            scaleGridLineWidth      : 1,
+            //Boolean - Whether to show horizontal lines (except X axis)
+            scaleShowHorizontalLines: true,
+            //Boolean - Whether to show vertical lines (except Y axis)
+            scaleShowVerticalLines  : true,
+            //Boolean - If there is a stroke on each bar
+            barShowStroke           : true,
+            //Number - Pixel width of the bar stroke
+            barStrokeWidth          : 2,
+            //Number - Spacing between each of the X value sets
+            barValueSpacing         : 5,
+            //Number - Spacing between data sets within X values
+            barDatasetSpacing       : 1,
+            //String - A legend template
+            legendTemplate          : '<ul class="<%=name.toLowerCase()%>-legend"><% for (var i=0; i<datasets.length; i++){%><li><span style="background-color:<%=datasets[i].fillColor%>"></span><%if(datasets[i].label){%><%=datasets[i].label%><%}%></li><%}%></ul>',
+            //Boolean - whether to make the chart responsive
+            responsive              : true,
+            maintainAspectRatio     : true
+          }
+
+          barChartOptions.datasetFill = false
+          barChart.Bar(barChartData, barChartOptions)
+        })
+    </script>
+
+}

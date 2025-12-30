@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Transactions;
+using TopLearn.Core.Convertors;
 using TopLearn.Core.DTOs.Order;
 using TopLearn.Core.Services.Interfaces;
 using TopLearn.DataLayer.Context;
@@ -214,6 +215,13 @@ namespace TopLearn.Core.Services
                 .FirstOrDefault(o => o.UserId == userId && !o.IsFinally);
         }
 
+        public async Task<int> GetOrderCountOfMonthAsync(DateTime dateTime)
+        {
+            return await _context.Orders
+                .Where(o => o.CreateDate.Month == dateTime.Month)
+                .CountAsync();
+        }
+
         public OrderDetail? GetOrderDetailByOrderIdAndCourseId(int orderId, int courseId)
         {
             return _context.OrderDetails
@@ -227,6 +235,17 @@ namespace TopLearn.Core.Services
                 .Include(o => o.OrderDetails)
                 .ThenInclude(od => od.Course)
                 .SingleOrDefault(o => o.UserId == userId && o.Id == orderId);
+        }
+
+        public async Task<int> GetTotalOrderAmountOfMonthAsync(DateTime dateTime)
+        {
+            var orders = await _context.Orders
+                .Where(o => o.CreateDate.Month == dateTime.Month)
+                .ToListAsync();
+
+            int totalAmount = orders.Sum(o => o.TotalPrice);
+
+            return totalAmount;
         }
 
         public IEnumerable<Order> GetUserOrders(string userName)

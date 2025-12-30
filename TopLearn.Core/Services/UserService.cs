@@ -579,5 +579,18 @@ namespace TopLearn.Core.Services
 
             return 0;
         }
+
+        public async Task<int> GetUserCountAsync()
+        {
+            return await _context.Users.CountAsync();
+        }
+
+        public async Task<int> GetTeacherCountAsync()
+        {
+            return await _context.Users
+                .Include(u => u.UserRoles)
+                .Where(u => u.UserRoles.Any(ur => ur.RoleId == 2))
+                .CountAsync();
+        }
     }
 }

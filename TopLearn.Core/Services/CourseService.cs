@@ -730,5 +730,10 @@ namespace TopLearn.Core.Services
             return await _context.UserCourses
                 .AnyAsync(uc => uc.CourseId == courseId);
         }
+
+        public async Task<int> GetCourseCountAsync()
+        {
+            return await _context.Courses.CountAsync();
+        }
     }
 }

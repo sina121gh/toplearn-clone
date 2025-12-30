@@ -12,6 +12,9 @@ namespace TopLearn.Core.Services.Interfaces
     {
         #region Order
         int AddOrder(string userName, int courseId);
+        Task<int> GetOrderCountOfMonthAsync(DateTime dateTime);
+        Task<int> GetTotalOrderAmountOfMonthAsync(DateTime dateTime);
+
         bool DoesUserHaveOpenOrder(int userId);
         bool SubmitOrder(string userName, int orderId);
         bool UpdateOrder(Order order);

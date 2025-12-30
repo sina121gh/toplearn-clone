@@ -20,6 +20,8 @@ namespace TopLearn.Core.Services.Interfaces
         bool DeleteUser(int userId);
         int AddUser(User user);
         int GetUserIdByUserName(string userName);
+        Task<int> GetUserCountAsync();
+        Task<int> GetTeacherCountAsync();
         User? GetUserByEmail(string email);
         User? GetUserForLogin(LoginViewModel login);
         User? GetUserByActiveCode(string activeCode);

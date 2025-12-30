@@ -48,6 +48,8 @@ namespace TopLearn.Core.Services.Interfaces
 
         int? GetCoursePriceById(int courseId);
 
+        Task<int> GetCourseCountAsync();
+
         int AddCourse(Course course, IFormFile courseImg, IFormFile courseDemo);
 
         Task<bool> DeleteCourseAsync(int courseId);
