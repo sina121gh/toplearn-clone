@@ -100,7 +100,7 @@ namespace TopLearn.Web.Controllers
 
         #region Answer
 
-        [Route("courses/{courseId}/questions/{questionId}/answers-create")]
+        [Route("courses/{courseId}/questions/{questionId}/answers")]
         [Authorize]
         [HttpPost]
         public IActionResult Answer(int courseId, int questionId, string body)

@@ -5,6 +5,7 @@
 @{
     bool showQuestions = true;
     bool isCourceFree = _courseService.IsCourseFree(Model.CourseId);
+    string courseTitle = _courseService.GetCourseTitleById(Model.CourseId);
     ViewData["Title"] = "پرسش";
 }
 
@@ -12,8 +13,8 @@
     <nav aria-label="breadcrumb">
         <ul class="breadcrumb">
             <li class="breadcrumb-item"><a href="/"> تاپ لرن </a></li>
-            <li class="breadcrumb-item"><a href=""> پرسش و پاسخ </a></li>
-            <li class="breadcrumb-item active" aria-current="page">  </li>
+            <li class="breadcrumb-item"><a href="/courses/@Model.CourseId"> دوره @courseTitle </a></li>
+            <li class="breadcrumb-item active" aria-current="page"> <a href="/courses/@Model.CourseId/questions"> پرسش و پاسخ </a> </li>
         </ul>
     </nav>
 </div>
@@ -49,13 +50,17 @@
         <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="inner">
-                    <div class="panel">
+                    <div class="panel col-md-10 col-sm-10 col-xs-10">
                         <form id="filterForm" method="get" class="form-inline">
                             <input type="hidden" name="pageId" id="pageId" value="@ViewBag.PageId" />
                             <input type="text" name="filter" class="form-control" placeholder="عبارت را وارد کنید" value="@ViewBag.Filter" />
                             <button class="btn-sm btn-success" onclick="filter()">جستجو</button>
                         </form>
                     </div>
+
+                    <div class="panel col-md-2 col-sm-2 col-xs-2">
+                        <a href="/courses/@Model.CourseId/questions/create" class="btn btn-success">پرسش سوال</a>
+                     </div>
                     @if (Model.Qeustions.Count() > 0)
                     {
                         @foreach (var question in Model.Qeustions)
@@ -63,7 +68,7 @@
                             <div class="panel p-5">
                                 <div class="panel-heading">
                                     <h1>
-                                        <a href="@question.Id">
+                                        <a href="/courses/@Model.CourseId/questions/@question.Id">
                                             @question.Title
                                         </a>
                                     </h1>
