@@ -60,6 +60,11 @@
                                             <td class="bg-warning">@Model.TotalPrice.ToString("#,0") تومان</td>
                                         </tr>
 
+                                        <tr>
+                                            <td colspan="3" class="text-left">موجودی کیف پول</td>
+                                            <td class="bg-warning">@ViewBag.WalletBalance.ToString("#,0") تومان</td>
+                                        </tr>
+
                                         
 
                                         @if (!Model.IsFinally)

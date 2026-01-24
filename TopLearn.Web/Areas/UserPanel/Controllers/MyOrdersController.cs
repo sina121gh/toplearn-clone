@@ -13,10 +13,13 @@ namespace TopLearn.Web.Areas.UserPanel.Controllers
         #region DI
 
         private readonly IOrderService _orderService;
+        private readonly IUserService _userService;
 
-        public MyOrdersController(IOrderService orderService)
+        public MyOrdersController(IOrderService orderService,
+            IUserService userService)
         {
             _orderService = orderService;
+            _userService = userService;
         }
 
         #endregion
@@ -32,12 +35,14 @@ namespace TopLearn.Web.Areas.UserPanel.Controllers
         public IActionResult ShowOrder(int orderId, string type, bool isFinally = false)
         {
             Order order = _orderService.GetOrderForUserPanel(User.Identity.Name, orderId);
+            var walletBalance = _userService.GetWalletBalance(User.Identity.Name);
 
             if (order == null)
                 return NotFound();
 
             ViewBag.IsFinally = isFinally;
             ViewBag.Type = type;
+            ViewBag.WalletBalance = walletBalance;
             return View(order);
         }
 

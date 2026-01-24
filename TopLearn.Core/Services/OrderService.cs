@@ -74,13 +74,7 @@ namespace TopLearn.Core.Services
             {
                 OrderDetail detail = GetOrderDetailByOrderIdAndCourseId(order.Id, courseId);
 
-                if (detail != null)
-                {
-                    detail.Count++;
-
-                    _context.OrderDetails.Update(detail);
-                }
-                else
+                if (detail is null)
                 {
                     detail = new OrderDetail()
                     {
@@ -91,9 +85,11 @@ namespace TopLearn.Core.Services
                     };
 
                     _context.OrderDetails.Add(detail);
+
+                    order.TotalPrice += coursePrice;
                 }
 
-                order.TotalPrice += coursePrice;
+                
                 _context.Orders.Update(order);
                 _context.SaveChanges();
 
