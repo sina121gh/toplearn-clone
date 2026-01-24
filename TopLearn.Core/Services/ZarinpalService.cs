@@ -31,6 +31,7 @@ namespace TopLearn.Core.Services
                 amount = amount,
                 description = description,
                 callback_url = $"{CallBackUrl}/{transactionId}",
+                currency = "IRT",
                 //metadata = new
                 //{
                 //    mobile = mobile,

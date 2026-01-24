@@ -2,6 +2,7 @@
 @inject IUserService _userService;
 @{
     ViewData["Title"] = $"فاکتور شماره {Model.Id}";
+    var neededAmount = Model.TotalPrice - ViewBag.WalletBalance;
 }
 
 <div class="container">
@@ -83,7 +84,7 @@
                                             <tr>
                                                 <td colspan="2" class="text-left"></td>
                                                 <td colspan="2">
-                                                    @if (_userService.GetWalletBalance(User.Identity.Name) >= Model.TotalPrice)
+                                                    @if (@ViewBag.WalletBalance >= Model.TotalPrice)
                                                     {
                                                         <a class="btn btn-success btn-block" href="/user-panel/my-orders/@Model.Id/submit">
                                                             تایید فاکتور
@@ -91,12 +92,13 @@
                                                     }
                                                     else
                                                     {
+                                                        
                                                         <a class="btn btn-success btn-block" disabled>
                                                             تایید فاکتور
                                                         </a>
                                                         <div class="alert alert-danger" style="margin-top:4px;">
-                                                            موجودی کیف پول شما کافی نمیباشد. لطفا از طریق
-                                                            <a class="alert-link" href="/user-panel/charge-wallet/">این لینک</a>
+                                                            موجودی کیف پول شما @neededAmount.ToString("#,0") تومان کم میباشد لطفا از طریق
+                                                            <a class="alert-link" href="/user-panel/charge-wallet/?amount=@neededAmount">این لینک</a>
                                                             نسبت به شارژ آن اقدام کنید
                                                         </div>
                                                     }

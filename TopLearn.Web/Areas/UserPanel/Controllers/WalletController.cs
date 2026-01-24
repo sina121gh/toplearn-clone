@@ -35,7 +35,15 @@ namespace TopLearn.Web.Areas.UserPanel.Controllers
         #region Charge Wallet
 
         [Route("user-panel/charge-wallet")]
-        public IActionResult ChargeWallet() => View();
+        public IActionResult ChargeWallet([FromQuery] int amount = 0)
+        {
+            ChargeWalletViewModel chargeWalletViewModel
+                = new ChargeWalletViewModel();
+
+            if (amount!= 0)
+                chargeWalletViewModel.Amount = amount;
+            return View(chargeWalletViewModel);
+        }
 
         [HttpPost]
         [Route("user-panel/charge-wallet")]
