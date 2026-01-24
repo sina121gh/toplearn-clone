@@ -37,6 +37,8 @@ namespace TopLearn.DataLayer.Entities.Order
 
         public List<UserDiscount>? UserDiscounts { get; set; }
 
+        public List<Order>? Orders { get; set; }
+
         #endregion
     }
 }

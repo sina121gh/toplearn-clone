@@ -1,5 +1,4 @@
 ﻿@model Order
-@inject IUserService _userService;
 @{
     ViewData["Title"] = $"فاکتور شماره {Model.Id}";
     var neededAmount = Model.TotalPrice - ViewBag.WalletBalance;
@@ -75,7 +74,7 @@
                                                 <td>
                                                     <form action="/user-panel/my-orders/apply-discount" method="post">
                                                         <input type="hidden" name="orderId" value="@Model.Id"/>
-                                                        <input type="text" name="discountCode" class="form-control" />
+                                                        <input value="@ViewBag.DiscountCode" type="text" name="discountCode" class="form-control" />
                                                         <input type="submit" class="btn btn-primary btn-block" style="margin-top:5px;" value="اعمال" />
                                                     </form>
                                                 </td>
@@ -149,7 +148,7 @@
                 </script>
                 break;
 
-            case "Used":
+            case "AlreadyUsed":
                 <script>
                     Swal.fire({
                         icon: 'warning',

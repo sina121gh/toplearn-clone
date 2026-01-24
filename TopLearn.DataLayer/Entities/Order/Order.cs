@@ -24,11 +24,16 @@ namespace TopLearn.DataLayer.Entities.Order
         [Required]
         public DateTime CreateDate { get; set; }
 
+        public int? DiscountId { get; set; }
+
 
         #region Relations
 
         [ForeignKey("UserId")]
         public User.User? User { get; set; }
+
+        [ForeignKey("DiscountId")]
+        public Discount? Discount { get; set; }
 
         public IEnumerable<OrderDetail>? OrderDetails { get; set; }
 

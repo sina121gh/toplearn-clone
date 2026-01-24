@@ -36,6 +36,10 @@ namespace TopLearn.Web.Areas.UserPanel.Controllers
         {
             Order order = _orderService.GetOrderForUserPanel(User.Identity.Name, orderId);
             var walletBalance = _userService.GetWalletBalance(User.Identity.Name);
+            string discountCode = "";
+
+            if (order.DiscountId != null)
+                discountCode = _orderService.GetDiscountCodeById(order.DiscountId.Value);
 
             if (order == null)
                 return NotFound();
@@ -43,6 +47,7 @@ namespace TopLearn.Web.Areas.UserPanel.Controllers
             ViewBag.IsFinally = isFinally;
             ViewBag.Type = type;
             ViewBag.WalletBalance = walletBalance;
+            ViewBag.DiscountCode = discountCode;
             return View(order);
         }
 

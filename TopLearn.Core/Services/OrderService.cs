@@ -120,8 +120,11 @@ namespace TopLearn.Core.Services
 
             Order order = GetOrderById(orderId);
 
+            if (order.DiscountId ==  discount.Id)
+                return DiscountCodeTypes.AlreadyUsed;
+
             if (HasDiscountUsedByUser(order.UserId, discount.Id))
-                return DiscountCodeTypes.Used;
+                return DiscountCodeTypes.Expired;
 
             order.TotalPrice -= ((order.TotalPrice * discount.Precent) / 100);
             UpdateOrder(order);
@@ -137,6 +140,8 @@ namespace TopLearn.Core.Services
                 UserId = order.UserId,
                 DiscountId = discount.Id,
             });
+
+            order.DiscountId = discount.Id;
 
             _context.SaveChanges();
 
