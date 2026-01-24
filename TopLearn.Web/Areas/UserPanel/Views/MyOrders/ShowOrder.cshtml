@@ -22,10 +22,7 @@
                 <div class="col-md-9 col-sm-8 col-xs-12">
                     <section class="user-account-content">
                         <header><h1> فاکتور شما </h1></header>
-                        @if(ViewBag.IsFinally == true)
-                        {
-                            
-                        }
+                        
                         <div class="inner">
                             <div class="account-information">
                                 <table class="table table-bordered table-hover table-responsive">
@@ -53,22 +50,18 @@
                                             </tr>
                                         }
 
-                                        
-
                                         <tr>
                                             <td colspan="3" class="text-left">جمع کل</td>
                                             <td class="bg-warning">@Model.TotalPrice.ToString("#,0") تومان</td>
-                                        </tr>
-
-                                        <tr>
-                                            <td colspan="3" class="text-left">موجودی کیف پول</td>
-                                            <td class="bg-warning">@ViewBag.WalletBalance.ToString("#,0") تومان</td>
-                                        </tr>
-
-                                        
+                                        </tr>                             
 
                                         @if (!Model.IsFinally)
                                         {
+                                            <tr>
+                                                <td colspan="3" class="text-left">موجودی کیف پول</td>
+                                                <td class="bg-warning">@ViewBag.WalletBalance.ToString("#,0") تومان</td>
+                                            </tr>
+
                                             <tr>
                                                 <td colspan="3" class="text-left">کد تخفیف</td>
                                                 <td>
