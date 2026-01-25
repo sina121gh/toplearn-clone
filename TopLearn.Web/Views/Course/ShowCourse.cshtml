@@ -63,7 +63,7 @@
                         
                     </div>
 
-                    @if (!isUserInCourse)
+                    @if (Model.Price != 0 && !isUserInCourse)
                     {
                         <div class="alert alert-info">
                             <p>
