@@ -230,6 +230,12 @@ namespace TopLearn.DataLayer.Context
                     Id = 13,
                     Title = "حذف دوره",
                     ParentId = 10,
+                },
+
+                new Permission()
+                {
+                    Id = 14,
+                    Title = "پنل مدرس",
                 }
                 );
 
@@ -328,6 +334,13 @@ namespace TopLearn.DataLayer.Context
                     Id = 13,
                     RoleId = 1,
                     PermissionId = 13,
+                },
+
+                new RolePermission()
+                {
+                    Id = 14,
+                    RoleId = 2,
+                    PermissionId = 14,
                 }
                 );
 

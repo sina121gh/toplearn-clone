@@ -534,6 +534,11 @@ namespace TopLearn.DataLayer.Migrations
                             Id = 13,
                             ParentId = 10,
                             Title = "حذف دوره"
+                        },
+                        new
+                        {
+                            Id = 14,
+                            Title = "پنل مدرس"
                         });
                 });
 
@@ -637,6 +642,12 @@ namespace TopLearn.DataLayer.Migrations
                             Id = 13,
                             PermissionId = 13,
                             RoleId = 1
+                        },
+                        new
+                        {
+                            Id = 14,
+                            PermissionId = 14,
+                            RoleId = 2
                         });
                 });
 

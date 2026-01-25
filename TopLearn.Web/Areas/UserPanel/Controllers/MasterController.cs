@@ -94,5 +94,19 @@ namespace TopLearn.Web.Areas.UserPanel.Controllers
 
             return new JsonResult(new { status = "Error" });
         }
+
+
+        [HttpDelete("master-courses/{courseId}/episodes/{episodeId}")]
+        public IActionResult Delete(int courseId, int episodeId)
+        {
+            if (!_courseService.DoesCourseExist(courseId))
+                return NotFound();
+
+            if (_courseService.GetCourseTeacherId(courseId) != _userService.GetUserIdByUserName(User.Identity.Name))
+                return Redirect("master-courses");
+
+            var success = _courseService.DeleteEpisode(episodeId);
+            return new JsonResult(new { success = success });
+        }
     }
 }

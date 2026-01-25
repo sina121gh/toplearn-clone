@@ -54,7 +54,11 @@
                                                         @(isFree ? "رایگان" : "پولی")
                                                     </span>
                                                 </td>
-                                                <td><a class="btn-sm btn-primary" href="/download/@episode.Id">دانلود</a></td>
+                                                <td>
+                                                    <a class="btn-sm btn-primary" href="/download/@episode.Id">دانلود</a>
+                                                    <a onclick="showSwal(@ViewBag.CourseId, @episode.Id, '@episode.Title')"
+                                                    class="btn-sm btn-danger">حذف</a>
+                                                </td>
                                             </tr>
                                         }
 
@@ -70,3 +74,61 @@
     </div>
 </main>
 
+@section Scripts {
+
+
+    <script>
+
+        const showSwal = (courseId, episodeId, title) => {
+            Swal.fire({
+                title: `آیا از حذف <u>${title}</u> مطمئن هستید؟`,
+                icon: 'question',
+                showCancelButton: true,
+                confirmButtonText: 'حذف',
+                cancelButtonText: 'لغو',
+                // confirmButtonColor: '#dc3545',
+                // cancelButtonColor: '#e0a800',
+                focusConfirm: false,
+                customClass: {
+                    confirmButton: 'btn btn-outline-danger',
+                    cancelButton: 'btn btn-outline-info mx-2',
+                },
+                buttonsStyling: false,
+            }).then(result => {
+                if (result.isConfirmed) {
+                    $.ajax({
+                        type: 'DELETE',
+                        url: `/master-courses/${courseId}/episodes/${episodeId}`,
+
+                        success: function (response) {
+                            if (response.success)
+                            {
+                                Swal.fire({
+                                title: 'قسمت با موفقیت حذف شد',
+                                icon: 'success'
+                                })
+                                setTimeout(() => {
+                                    location.reload();
+                                }, 800);
+                            }
+                            else{
+                                Swal.fire({
+                                    title: 'حذف با خطا مواجه شد',
+                                    icon: 'error'
+                                    })
+                            }
+
+                        }
+                    })
+                }
+            });
+        }
+
+        $(document).ready(function () {
+
+            const deleteBtn = document.getElementById("deleteButton");
+        })
+
+    </script>
+
+}
