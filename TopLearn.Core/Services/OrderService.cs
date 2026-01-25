@@ -267,9 +267,14 @@ namespace TopLearn.Core.Services
         {
             int userId = _userService.GetUserIdByUserName(userName);
 
-            return _context
+            bool result = 
+                (_context
                 .UserCourses
-                .Any(uc => uc.UserId == userId && uc.CourseId == courseId);
+                .Any(uc => uc.UserId == userId && uc.CourseId == courseId))
+                ||
+                _courseService.GetCourseTeacherId(courseId) == userId;
+
+            return result;
         }
 
         public bool SubmitOrder(string userName, int orderId)

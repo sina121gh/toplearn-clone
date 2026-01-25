@@ -35,10 +35,10 @@
                             {
                                 <div class="loggein">
                                     <i class="zmdi zmdi-account"></i><a href="/user-panel"> @User.Identity.Name ، خوش آمدید </a> / 
-                                    <a href="/logout"> خروج </a> / 
+                                    <a href="/logout"> خروج </a>
                                     @if (_permissionService.HasUserThisPermission(1, User.Identity.Name))
                                     {
-                                        <a href="/admin"> پنل ادمین </a>
+                                        <a href="/admin"> / پنل ادمین </a>
                                     }
                                 </div>
                             }

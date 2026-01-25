@@ -280,7 +280,6 @@ namespace TopLearn.Core.Services
             string getType = "all", string orderBy = "createDate",
             int minPrice = 0, int maxPrice = 0, List<int> selectedGroups = null)
         {
-            if (take == 0)
                 take = 8;
 
             IQueryable<Course> result = _context.Courses;
