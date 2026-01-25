@@ -45,7 +45,7 @@ namespace TopLearn.Web.Controllers
             if (course == null)
                 return NotFound();
 
-            if (episodeId != 0 && User.Identity.IsAuthenticated)
+            if (episodeId != 0)
             {
                 if (!course.CourseEpisodes.Any(e => e.Id == episodeId))
                 {
@@ -53,41 +53,42 @@ namespace TopLearn.Web.Controllers
                 }
                 if (!course.CourseEpisodes.SingleOrDefault(e => e.Id == episodeId).IsFree)
                 {
-                    if (!_orderService.IsUserInCourse(User.Identity.Name, course.Id))
-                    {
-                        return NotFound();
-                    }
+                    if (User.Identity.IsAuthenticated)
+                        if (!_orderService.IsUserInCourse(User.Identity.Name, course.Id))
+                        {
+                            return NotFound();
+                        }
                 }
 
                 CourseEpisode episode = course.CourseEpisodes.SingleOrDefault(e => e.Id == episodeId);
 
-                string filePathForOnlineShow = "/CourseFilesForOnlineShow/" + 
-                    episode.FileName.Replace(".rar", ".mp4");
+                //string filePathForOnlineShow = Path.Combine(Directory.GetCurrentDirectory(),
+                //    "wwwroot", "CourseFilesForOnlineShow", 
+                //    episode.FileName.Replace(".rar", ".mp4"));
 
 
-                if (!System.IO.File.Exists(Path.Combine(Directory.GetCurrentDirectory(),
-                    "wwwroot/CourseFilesForOnlineShow", episode.FileName.Replace(".rar", ".mp4"))))
-                {
-                    string targetPath = Path.Combine(Directory.GetCurrentDirectory(),
-                        "wwwroot/CourseFilesForOnlineShow");
+                //if (!System.IO.File.Exists(Path.Combine(Directory.GetCurrentDirectory(),
+                //    "wwwroot", "CourseFilesForOnlineShow", episode.FileName.Replace(".rar", ".mp4"))))
+                //{
+                //    string targetPath = Path.Combine(Directory.GetCurrentDirectory(),
+                //        "wwwroot", "CourseFilesForOnlineShow");
 
-                    string rarPath = Path.Combine(Directory.GetCurrentDirectory(),
-                        "wwwroot/courses/episodes",
-                        episode.FileName);
+                //    string rarPath = Path.Combine(Directory.GetCurrentDirectory(),
+                //        "wwwroot", "courses", "episodes",
+                //        episode.FileName);
 
-                    var archive = ArchiveFactory.Open(rarPath);
+                //    var archive = ArchiveFactory.Open(rarPath);
 
-                    var Entries = archive.Entries.OrderBy(x => x.Key.Length);
-                    foreach (var entry in Entries)
-                    {
-                        if (Path.GetExtension(entry.Key) == ".mp4")
-                        {
-                            entry.WriteTo(System.IO.File.Create(Path.Combine(targetPath, episode.FileName.Replace(".rar", ".mp4"))));
-                        }
-                    }
-                }
+                //    var Entries = archive.Entries.OrderBy(x => x.Key.Length);
+                //    foreach (var entry in Entries)
+                //    {
+                //        if (Path.GetExtension(entry.Key) == ".mp4")
+                //        {
+                //            entry.WriteTo(System.IO.File.Create(Path.Combine(targetPath, episode.FileName.Replace(".rar", ".mp4"))));
+                //        }
+                //    }
+                //}
 
-                ViewBag.filePath = filePathForOnlineShow;
                 ViewBag.Episode = episode;
             }
 

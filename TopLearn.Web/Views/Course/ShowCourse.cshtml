@@ -74,16 +74,6 @@
 
                     <h2> سرفصل های این دوره : </h2>
 
-                    @if (ViewBag.Episode != null)
-                    {
-                        CourseEpisode courseEpisode = ViewBag.Episode as CourseEpisode;
-                        string filePath = ViewBag.FilePath;
-
-                        <video controls style="width:100%;">
-                            <source src="@filePath" />
-                        </video>
-                    }
-
                     <ul>
                         @foreach (CourseEpisode episode in Model.CourseEpisodes)
                         {
@@ -110,6 +100,17 @@
                                 }
                                 <i> @(episode.IsFree ? "رایگان" : "نقدی") </i>
                                 <span>@episode.Time</span>
+
+                                @if (ViewBag.Episode != null)
+                                {
+                                    CourseEpisode courseEpisode = ViewBag.Episode as CourseEpisode;
+                                    if (courseEpisode.Id == episode.Id)
+                                    {
+                                        <video  controls style="width:100%;">
+                                            <source src="/courses/episodes/@courseEpisode.FileName"/>
+                                        </video>
+                                    }
+                                }
                             </li>
                         }
                     </ul>

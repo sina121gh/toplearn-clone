@@ -1,0 +1,757 @@
+[33mcommit 5d9530931afbd60d796187509b81025b333d5cb1[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m)[m
+Author: Alireza Ghiasy <sina121gh@gmail.com>
+Date:   Sun Jan 25 11:49:18 2026 +0330
+
+    fixed shwoing courses of selected category
+
+[33mcommit 2ff2fbd36f9937d4dde5710c67ccf60f40144954[m
+Author: Alireza Ghiasy <sina121gh@gmail.com>
+Date:   Sun Jan 25 11:25:17 2026 +0330
+
+    added master panel permission and added delete epispde option for master
+
+[33mcommit e2f61314833f0d49a6e0fb8b8694251a6c8103ac[m
+Author: Alireza Ghiasy <sina121gh@gmail.com>
+Date:   Sat Jan 24 15:59:59 2026 +0330
+
+    added create question button in course questions list
+
+[33mcommit 9f6311adb92f582cc75e94fb961fce63da05e6b3[m
+Author: Alireza Ghiasy <sina121gh@gmail.com>
+Date:   Sat Jan 24 15:30:16 2026 +0330
+
+    fixed showing wallet balance after payment
+
+[33mcommit 6e503fff30280990b07fbb04dee9a0df12acfb90[m
+Author: Alireza Ghiasy <sina121gh@gmail.com>
+Date:   Sat Jan 24 15:26:36 2026 +0330
+
+    added discountId to order entity
+
+[33mcommit a40118f011a589d89c611e88d593aa282e40d1ee[m
+Author: Alireza Ghiasy <sina121gh@gmail.com>
+Date:   Sat Jan 24 14:32:45 2026 +0330
+
+    changed zarinpal currenty to IRT
+
+[33mcommit b3706e89b2dc62f14096030cce6502955849d8f1[m
+Author: Alireza Ghiasy <sina121gh@gmail.com>
+Date:   Sat Jan 24 14:19:15 2026 +0330
+
+    fixed course quantity in user cart
+
+[33mcommit 6c4d1b02dacc61c194149b528975ae6dbe7d0994[m
+Author: Alireza Ghiasy <sina121gh@gmail.com>
+Date:   Fri Jan 23 19:34:21 2026 +0330
+
+    downloaded needed files and removed online styles and scripts
+
+[33mcommit d4361da1ba69f0132a17b41272375668d2ece3ba[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Alireza Ghiasy <sina121gh@gmail.com>
+Date:   Tue Dec 30 17:45:20 2025 +0330
+
+    fixed filtering usesr bugs
+
+[33mcommit d24f5f786a8deecedb18b9db62332fdca961eb38[m
+Author: Alireza Ghiasy <sina121gh@gmail.com>
+Date:   Tue Dec 30 16:42:16 2025 +0330
+
+    added some statistics to admin dashboard
+
+[33mcommit e7790d973283aee6a45ac1deaf9b60c439b88ad3[m
+Author: Alireza Ghiasy <sina121gh@gmail.com>
+Date:   Sat Dec 6 10:27:29 2025 +0330
+
+    fixed showing all courses bugs
+
+[33mcommit 023f8be13811045612761fae965f5a747e5b656f[m
+Author: Alireza Ghiasy <sina121gh@gmail.com>
+Date:   Sat Dec 6 10:27:06 2025 +0330
+
+    validating all fields when adding course
+
+[33mcommit baa3c127fc34ffdb1d95a89c6fe83759a7d9a2d7[m
+Author: Alireza Ghiasy <sina121gh@gmail.com>
+Date:   Sat Dec 6 10:04:27 2025 +0330
+
+    fixed updating discount bug
+
+[33mcommit e10bda3b97e1e15949b1b98fe1e0a09b7df4688e[m
+Author: Alireza Ghiasy <sina121gh@gmail.com>
+Date:   Sat Dec 6 09:37:59 2025 +0330
+
+    fixed delete user, discount and episode http method
+
+[33mcommit 88a7fa864e2cd86a17a0470b1a0b5c07e346dd2d[m
+Author: Alireza Ghiasy-L <sina121gh@gmail.com>
+Date:   Fri Dec 5 12:58:16 2025 +0330
+
+    fixed deleting course bug
+
+[33mcommit 405c1957b2d12f0e97e163c9991b2435d17b2a02[m
+Author: Alireza Ghiasy-L <sina121gh@gmail.com>
+Date:   Fri Dec 5 11:41:38 2025 +0330
+
+    fixed delete course-group and course delete http method
+
+[33mcommit ac4b664d071e7e4d42501546675081dc8b3ab54f[m
+Author: Alireza Ghiasy-L <sina121gh@gmail.com>
+Date:   Fri Dec 5 11:13:13 2025 +0330
+
+    fixed delete role http method
+
+[33mcommit 65db4690cd40c5a368ae47a5934079f713571f5b[m
+Author: Alireza Ghiasy <sina121gh@gmail.com>
+Date:   Sat Nov 15 20:05:05 2025 +0330
+
+    added delete course method
+
+[33mcommit ed905cd0e60f957c5cd3fd8cb63e42f378893688[m
+Author: Alireza Ghiasy <sina121gh@gmail.com>
+Date:   Sat Nov 15 19:25:22 2025 +0330
+
+    fixed uploading large vidoe bug
+
+[33mcommit 45ced3a50aed5c3743dc957c4a182b86447b6c49[m
+Author: Alireza Ghiasy-L <sina121gh@gmail.com>
+Date:   Thu Nov 13 17:29:34 2025 +0330
+
+    fixed showing course votes bus
+
+[33mcommit 7e66ba21198c9ed0940bf3d4dc0c6786167cb943[m
+Author: Alireza Ghiasy-L <sina121gh@gmail.com>
+Date:   Thu Nov 13 17:21:33 2025 +0330
+
+    returning 404 if a normal user goes to admin pages
+
+[33mcommit d6439095fa0a1c7aee02da575535e3d1d1300054[m
+Author: Alireza Ghiasy <sina121gh@gmail.com>
+Date:   Mon Oct 27 10:00:58 2025 +0330
+
+    reloading page after user is deleted
+
+[33mcommit 8e349535b65704ac3c6c22cda152a640f4082a23[m
+Author: Alireza Ghiasy <sina121gh@gmail.com>
+Date:   Mon Oct 27 09:43:58 2025 +0330
+
+    updated .env.example file
+
+[33mcommit 34535914f68903f58098b172d08ac77c5f47704c[m
+Author: Alireza Ghiasy <sina121gh@gmail.com>
+Date:   Mon Oct 27 09:41:12 2025 +0330
+
+    fixed payment problem and moved urls to .env
+
+[33mcommit 7b98212c7efbf5669fa4cb0f435ab70a4582709a[m
+Author: Alireza Ghiasy <sina121gh@gmail.com>
+Date:   Sun Oct 26 21:33:43 2025 +0330
+
+    updated .env.example
+
+[33mcommit 69ba2eeacb260cfd8655b97813f379d5f6743ba4[m
+Author: Alireza Ghiasy <sina121gh@gmail.com>
+Date:   Sun Oct 26 21:32:55 2025 +0330
+
+    moved smtp username and password to .env
+
+[33mcommit 686e7d040a9a0cb7b023fd08aa7043a56cca8e97[m
+Author: Alireza Ghiasy <118561256+sina121gh@users.noreply.github.com>
+Date:   Mon Jun 10 22:16:46 2024 +0330
+
+    Update README.md
+
+[33mcommit b833d671c6d1b9dba29c08e88b0b644eb02db2c2[m
+Author: Alireza Ghiasy <118561256+sina121gh@users.noreply.github.com>
+Date:   Mon Jun 10 22:13:19 2024 +0330
+
+    Create README.md
+
+[33mcommit acba9ef347c25047bf769170d897a524840a95dd[m
+Author: Alireza Ghiasy <sina121gh@gmail.com>
+Date:   Mon Jun 10 22:08:22 2024 +0330
+
+    removed .env file
+
+[33mcommit c673391c9aa489a8d4574c98400a09f066ea908d[m
+Author: Alireza Ghiasy <sina121gh@gmail.com>
+Date:   Mon Jun 10 22:07:04 2024 +0330
+
+    removed a lot of unnecessary files
+
+[33mcommit 45ffc3b8210c82e554e98d1d9f3ce12ed4829638[m
+Author: Alireza Ghiasy <sina121gh@gmail.com>
+Date:   Mon Jun 10 21:51:02 2024 +0330
+
+    added .env.example file
+
+[33mcommit d5b9311a7cdfa7e536deb89d5a9058b7f060f2da[m
+Author: Alireza Ghiasy <sina121gh@gmail.com>
+Date:   Mon Jun 10 21:49:33 2024 +0330
+
+    changed .gitignore file\
+
+[33mcommit 4856bd32ccadf0c68201a6277150c687168a94a7[m
+Author: Alireza Ghiasy <sina121gh@gmail.com>
+Date:   Mon May 13 17:12:48 2024 +0330
+
+    added master controller in user panel and manage courses for masters
+
+[33mcommit 08e604f49c922d9acc48a0898d813041902a7f30[m
+Author: Alireza Ghiasy <sina121gh@gmail.com>
+Date:   Sun May 12 21:57:53 2024 +0330
+
+    added users accessibility to the course questions
+
+[33mcommit 2aa3b4ac22e886360c81c128a5dc701012d7e097[m
+Author: Alireza Ghiasy <sina121gh@gmail.com>
+Date:   Sat May 11 22:04:03 2024 +0330
+
+    added filter for questions and not found page and middleware
+
+[33mcommit fc5d8aa77ff8179f160992c4bafe2c84c2a97c60[m
+Author: Alireza Ghiasy <sina121gh@gmail.com>
+Date:   Wed May 8 15:47:24 2024 +0330
+
+    added html sanitizer package and anti xss
+
+[33mcommit 3285398c7697f762338787cc7081c44185eaa257[m
+Author: Alireza Ghiasy <sina121gh@gmail.com>
+Date:   Wed May 8 12:40:50 2024 +0330
+
+    added answer to questions feature and select true answer
+
+[33mcommit 5920ff8625812fb118cac2caf0a283bb3213b5d4[m
+Author: Alireza Ghiasy <sina121gh@gmail.com>
+Date:   Sun May 5 19:24:31 2024 +0330
+
+    added show question page
+
+[33mcommit 499fad83acfdf21ab1a50ec81b6c240272a70390[m
+Author: Alireza Ghiasy <sina121gh@gmail.com>
+Date:   Sun May 5 18:41:41 2024 +0330
+
+    added create question page
+
+[33mcommit 03194738b3bfa287f33fd0fbcf19cbcf63c2f211[m
+Author: Alireza Ghiasy <sina121gh@gmail.com>
+Date:   Sun May 5 15:58:39 2024 +0330
+
+    added Q&A models
+
+[33mcommit bd47b7d41ab4aafdf8527a9f4301c72b59d0448b[m
+Author: Alireza Ghiasy <sina121gh@gmail.com>
+Date:   Fri May 3 19:24:22 2024 +0330
+
+    added jquery quto complete for search courses in landing page
+
+[33mcommit 7ab53b24520b3b25c5a118fb3c8734ae7fee1415[m
+Author: Alireza Ghiasy <sina121gh@gmail.com>
+Date:   Fri May 3 18:42:50 2024 +0330
+
+    cached latest courses in landing page
+
+[33mcommit d45a4a31124993d6742e3ae08224fe55fcf46dcb[m
+Author: Alireza Ghiasy <sina121gh@gmail.com>
+Date:   Wed May 1 20:59:29 2024 +0330
+
+    added middeware to protect course files and added extract course files for online show feature
+
+[33mcommit ea2bd382895fb10e675c8426863b0abd4bd686da[m
+Author: Alireza Ghiasy <sina121gh@gmail.com>
+Date:   Mon Apr 29 17:29:21 2024 +0330
+
+    added show online course link in show course page
+
+[33mcommit 772ca60669cddfd7e30c8ec3ee396dc5f3f30826[m
+Author: Alireza Ghiasy <sina121gh@gmail.com>
+Date:   Mon Apr 15 22:01:59 2024 +0330
+
+    added vote for courses
+
+[33mcommit 963d8a2ea0da9c3259ba322397dcfdd3f9cd6a00[m
+Author: Alireza Ghiasy <sina121gh@gmail.com>
+Date:   Mon Apr 15 17:22:22 2024 +0330
+
+    added CRUD for course groups in admin panel
+
+[33mcommit 2ce149b187e59165fac055a498a29a4671b37ac5[m
+Author: Alireza Ghiasy <sina121gh@gmail.com>
+Date:   Sun Apr 14 21:32:37 2024 +0330
+
+    added popular courses in landing page
+
+[33mcommit 58055664f5e268bfc3c29508c6aef2bcb0d7ef14[m
+Author: Alireza Ghiasy <sina121gh@gmail.com>
+Date:   Sun Apr 14 20:51:00 2024 +0330
+
+    added create course action
+
+[33mcommit ffcf601882f7968be811e6f1c60d0780a3bd0eb9[m
+Author: Alireza Ghiasy <sina121gh@gmail.com>
+Date:   Sat Apr 13 22:00:33 2024 +0330
+
+    added download action for courses
+
+[33mcommit 102ec76d6b4d35e50843697d05a2f0359e76c6ac[m
+Author: Alireza Ghiasy <sina121gh@gmail.com>
+Date:   Sat Apr 13 18:13:32 2024 +0330
+
+    added CRUD for discounts in admin
+
+[33mcommit 7e95b8518ab8da0e8588227e43e3a9e71366b912[m
+Author: Alireza Ghiasy-L <sina121gh@gmail.com>
+Date:   Fri Apr 12 21:29:46 2024 +0330
+
+    added discount table and apply discount action for order
+
+[33mcommit 39ef57b39a9bf32c4f5dce81ec4e04654e00df09[m
+Author: Alireza Ghiasy-L <sina121gh@gmail.com>
+Date:   Fri Apr 12 20:05:51 2024 +0330
+
+    added show order action and completed buy course
+
+[33mcommit d92781b34ea4910c297ef2cd93e71f0488ef6343[m
+Author: Alireza Ghiasy-L <sina121gh@gmail.com>
+Date:   Fri Apr 12 17:11:23 2024 +0330
+
+    added orders table and buy course action
+
+[33mcommit 19db121b8e2438945e183e250d8459bb5f86c4e5[m
+Author: Alireza Ghiasy-L <sina121gh@gmail.com>
+Date:   Fri Apr 12 11:53:44 2024 +0330
+
+    added course details page
+
+[33mcommit 0e49b18529f9d6866b1cb30e3e16ceccd38f1d04[m
+Author: Alireza Ghiasy-L <sina121gh@gmail.com>
+Date:   Wed Apr 10 20:50:46 2024 +0330
+
+    completed filter section for courses
+
+[33mcommit e52dbf262416d09698dd96cad27c664b0021b5dd[m
+Author: Alireza Ghiasy <sina121gh@gmail.com>
+Date:   Tue Apr 9 18:16:09 2024 +0330
+
+    added filter for course page
+
+[33mcommit 5ce7321a8f0059ffd7d0eb9e7040f73565e25a38[m
+Author: Alireza Ghiasy <sina121gh@gmail.com>
+Date:   Mon Apr 8 21:41:00 2024 +0330
+
+    added course box for show in landing page
+
+[33mcommit be8544776d5df94d2a8773fa2e067acb3087f572[m
+Author: Alireza Ghiasy <sina121gh@gmail.com>
+Date:   Mon Apr 8 14:06:25 2024 +0330
+
+    added delete episode feature usnig ajax
+
+[33mcommit f33492ae4cc1823b3b9522d3bdc1a8e3340e6dff[m
+Author: Alireza Ghiasy-L <sina121gh@gmail.com>
+Date:   Wed Mar 27 17:36:21 2024 +0330
+
+    added create and edit page for course episodes
+
+[33mcommit 48061fabf2eaed1b7a1f73c1c35987ed851f1511[m
+Author: Alireza Ghiasy-L <sina121gh@gmail.com>
+Date:   Tue Mar 26 17:29:26 2024 +0330
+
+    added hidden input for course demo file name in edit course page
+
+[33mcommit 115235757eac778e8eca4834d73ee96a4fcad784[m
+Author: Alireza Ghiasy-L <sina121gh@gmail.com>
+Date:   Tue Mar 26 17:26:41 2024 +0330
+
+    added edit course page and fixed admin pages routes
+
+[33mcommit 293a7ef539f207d48af82cc8b098b5a86bd38542[m
+Author: Alireza Ghiasy <sina121gh@gmail.com>
+Date:   Fri Mar 22 16:24:00 2024 +0330
+
+    completed create course page (cannot upload demo video)
+
+[33mcommit 5b5d4007cb94c6da04e16f3dadeedab8f72f7e11[m
+Author: Alireza Ghiasy <sina121gh@gmail.com>
+Date:   Fri Mar 22 13:21:27 2024 +0330
+
+    added create course page(view only)
+
+[33mcommit b5379a0aabf7413d04d5f77ad6ab32c70ab5f0de[m
+Author: Alireza Ghiasy <sina121gh@gmail.com>
+Date:   Wed Mar 20 16:19:39 2024 +0330
+
+    completed courses tables and added seed data
+
+[33mcommit 8fea0098e1cf88928b5a96d606eb7fcd2c1d2ec1[m
+Author: Alireza Ghiasy <sina121gh@gmail.com>
+Date:   Wed Mar 20 14:09:20 2024 +0330
+
+    added course model
+
+[33mcommit 5074d661bb621272a27082c2e1a8d1f2223bcc49[m
+Author: Alireza Ghiasy <sina121gh@gmail.com>
+Date:   Wed Mar 20 11:12:01 2024 +0330
+
+    added course groups component
+
+[33mcommit 1351119f1d1144d17dabcd47f7a1e14eb9491c74[m
+Author: Alireza Ghiasy <sina121gh@gmail.com>
+Date:   Tue Mar 19 17:16:29 2024 +0330
+
+    added permission chekcer
+
+[33mcommit 3cb4adaadd3efd4839ed7b037e31fd922a383994[m
+Author: Alireza Ghiasy <sina121gh@gmail.com>
+Date:   Tue Mar 19 14:52:06 2024 +0330
+
+    added permissions table and added permissions control in role CRUD
+
+[33mcommit e26ed3010d0ea35172479738a1ce905aa776ad33[m
+Author: Alireza Ghiasy <sina121gh@gmail.com>
+Date:   Mon Mar 18 21:54:49 2024 +0330
+
+    added CRUD for roles in admin panel
+
+[33mcommit d58ebfb26abf5454776f377f1a31fca933324a5e[m
+Author: Alireza Ghiasy-L <sina121gh@gmail.com>
+Date:   Sun Mar 17 18:01:47 2024 +0330
+
+    added delete user by modal
+
+[33mcommit a7133cf0bbbd228ea9dc8babb761620324914ee9[m
+Author: Alireza Ghiasy-L <sina121gh@gmail.com>
+Date:   Fri Mar 15 15:05:43 2024 +0330
+
+    added some methods for wallet e.g create, update balance
+
+[33mcommit 77378510dd949f81092dfc2f752ab0e760edd9af[m
+Author: Alireza Ghiasy-L <sina121gh@gmail.com>
+Date:   Fri Mar 8 13:32:59 2024 +0330
+
+    added sweet alert
+
+[33mcommit aa61a21dfd55b5631186a5f62fea161fb657ea0a[m
+Author: Alireza Ghiasy <sina121gh@gmail.com>
+Date:   Tue Mar 5 18:28:28 2024 +0330
+
+    added edit user page for admin
+
+[33mcommit dc748a745ccf0fcd7bc9f1ca4d60ddf016af594a[m
+Author: Alireza Ghiasy <sina121gh@gmail.com>
+Date:   Mon Mar 4 22:36:24 2024 +0330
+
+    completed add user for admin
+
+[33mcommit f27a51f5f769779dc89e4c2123dc73594625f4f8[m
+Author: Alireza Ghiasy <sina121gh@gmail.com>
+Date:   Sun Mar 3 21:52:08 2024 +0330
+
+    added create user page view only for admin
+
+[33mcommit f0faabf16a99a732b5b71999519583b2c6662d96[m
+Author: Alireza Ghiasy-L <sina121gh@gmail.com>
+Date:   Fri Mar 1 20:28:45 2024 +0330
+
+    added add user link in users list
+
+[33mcommit 49ec15e770e1cdd21c908768e6c0df43902f8e4d[m
+Author: Alireza Ghiasy-L <sina121gh@gmail.com>
+Date:   Fri Mar 1 17:20:41 2024 +0330
+
+    added users list page
+
+[33mcommit c9a83416e0dd50a67a64ffa772d56df7067043b0[m
+Author: Alireza Ghiasy <sina121gh@gmail.com>
+Date:   Thu Feb 29 20:29:08 2024 +0330
+
+    added users list view model for admin
+
+[33mcommit 0117b052fae3953792403d5adf1534026839a2d4[m
+Author: Alireza Ghiasy-L <sina121gh@gmail.com>
+Date:   Thu Feb 29 14:44:31 2024 +0330
+
+    added razor page for admin panel
+
+[33mcommit 8fb7db88e60de60b451be2ad9843d02dd48a6b7c[m
+Author: Alireza Ghiasy-L <sina121gh@gmail.com>
+Date:   Sun Feb 25 16:15:45 2024 +0330
+
+    addded validate payment view
+
+[33mcommit 11df72ea8ea3c63b17a54e9eff42a3280b875c4b[m
+Author: Alireza Ghiasy-L <sina121gh@gmail.com>
+Date:   Sun Feb 25 15:01:16 2024 +0330
+
+    added payment actions and service
+
+[33mcommit 17d3849e98a4e6839b6992b503ef82971d608a72[m
+Author: Alireza Ghiasy-L <sina121gh@gmail.com>
+Date:   Sun Feb 25 13:22:49 2024 +0330
+
+    added zarinpal package to web data library
+
+[33mcommit 78350aa2dd63ffea59110332a13d377e61a9731a[m
+Author: Alireza Ghiasy-L <sina121gh@gmail.com>
+Date:   Sun Feb 25 12:27:23 2024 +0330
+
+    added charge wallet action and page for users
+
+[33mcommit ce3b6e058ec7e02d708b807fa74676a76f1d6352[m
+Author: Alireza Ghiasy-L <sina121gh@gmail.com>
+Date:   Sun Feb 25 11:25:29 2024 +0330
+
+    added transactions list page for user
+
+[33mcommit 58e1b82c67a8527f6e5c8e4b5fad29552264ca4c[m
+Author: Alireza Ghiasy-L <sina121gh@gmail.com>
+Date:   Sun Feb 25 10:44:04 2024 +0330
+
+    added method to get wallet balance
+
+[33mcommit e33d6dad4f688107fdeee5fda2d1466c01352066[m
+Author: Alireza Ghiasy-L <sina121gh@gmail.com>
+Date:   Sun Feb 25 10:12:29 2024 +0330
+
+    fixed user transactions relaion
+
+[33mcommit 3afd6e8ff25f03115c6a7e570f21c5eac0f62852[m
+Author: Alireza Ghiasy-L <sina121gh@gmail.com>
+Date:   Sat Feb 24 21:32:14 2024 +0330
+
+    added seed data for transaction types
+
+[33mcommit eb45df939b78edda7317589064dcbe1150bf71e2[m
+Author: Alireza Ghiasy-L <sina121gh@gmail.com>
+Date:   Sat Feb 24 21:10:40 2024 +0330
+
+    fixed relation between user and wallet
+
+[33mcommit b733ee66a292a439e98728b98d3e4d90f145b4d5[m
+Author: Alireza Ghiasy-L <sina121gh@gmail.com>
+Date:   Sat Feb 24 20:49:43 2024 +0330
+
+    added wallet transactions models
+
+[33mcommit 765383d5d86e61efca0d40f02e891fa814cfc004[m
+Author: Alireza Ghiasy-L <sina121gh@gmail.com>
+Date:   Sat Feb 24 20:28:49 2024 +0330
+
+    added wallet type model
+
+[33mcommit b17f7a9b1d1cb7853e6dc31c67bc92b745d89577[m
+Author: Alireza Ghiasy-L <sina121gh@gmail.com>
+Date:   Sat Feb 24 20:03:51 2024 +0330
+
+    added change password page for users
+
+[33mcommit 9a8e839e955b199740e768201f551114e6996a01[m
+Author: Alireza Ghiasy-L <sina121gh@gmail.com>
+Date:   Fri Feb 23 19:09:40 2024 +0330
+
+    added edit profile page
+
+[33mcommit 966f78022d657cd9fc77bbbb0c709a1d08c2c8d5[m
+Author: Alireza Ghiasy-L <sina121gh@gmail.com>
+Date:   Thu Feb 22 17:28:18 2024 +0330
+
+    moved user panel side bar to its partial view
+
+[33mcommit eaded280717153c9eea9ac2d2a963f779fb133d3[m
+Author: Alireza Ghiasy-L <sina121gh@gmail.com>
+Date:   Thu Feb 22 17:02:59 2024 +0330
+
+    completed user panel index page
+
+[33mcommit 73e9e72f567f844b7e60025f2a7bffe61cf4b052[m
+Author: Alireza Ghiasy-L <sina121gh@gmail.com>
+Date:   Thu Feb 22 16:42:14 2024 +0330
+
+    fixed layout styles for user panel
+
+[33mcommit dabc5f2176cf52c770bc62922d927d2f1117d991[m
+Author: Alireza Ghiasy-L <sina121gh@gmail.com>
+Date:   Thu Feb 22 16:18:25 2024 +0330
+
+    added user panel area ane map controller route for areas
+
+[33mcommit abf1cf7bfcda99669605633b315a849ae3423e75[m
+Author: Alireza Ghiasy-L <sina121gh@gmail.com>
+Date:   Thu Feb 22 15:13:31 2024 +0330
+
+    added reset password page and email sender
+
+[33mcommit ac8fc27cf1a20b83c080f9f92e6de6fb132d4856[m
+Author: Alireza Ghiasy <sina121gh@gmail.com>
+Date:   Wed Feb 21 19:42:38 2024 +0330
+
+    fixed img src in email body but stil has problem when sent
+
+[33mcommit 62be9ea69a8940b6495d5b317b8abbafa0e459a9[m
+Author: Alireza Ghiasy <sina121gh@gmail.com>
+Date:   Mon Feb 19 22:12:51 2024 +0330
+
+    fixed send email error
+
+[33mcommit 877d1f9dc558440949a0fc4f04ade0bd856915ca[m
+Author: Alireza Ghiasy-L <sina121gh@gmail.com>
+Date:   Mon Feb 19 08:37:34 2024 +0330
+
+    added SendEmail class to core class library
+
+[33mcommit 333096e763bcf6897db615f99b82bba79c9bd89a[m
+Author: Alireza Ghiasy-L <sina121gh@gmail.com>
+Date:   Mon Feb 19 08:27:40 2024 +0330
+
+    added _ActiveEmail View
+
+[33mcommit c83fe895daec07c882da96610fb008b148b5abf1[m
+Author: Alireza Ghiasy-L <sina121gh@gmail.com>
+Date:   Mon Feb 19 07:46:43 2024 +0330
+
+    injected IViewRenderService to Account controller
+
+[33mcommit 870dea6c5bae8017a43fd212620b8dbea1b1432e[m
+Author: Alireza Ghiasy-L <sina121gh@gmail.com>
+Date:   Mon Feb 19 07:44:16 2024 +0330
+
+    added needed packages for RenderViewToString
+
+[33mcommit 442b6ed18202824d1891f87d3e2b96a868eab9a3[m
+Author: Alireza Ghiasy-L <sina121gh@gmail.com>
+Date:   Sun Feb 18 21:52:56 2024 +0330
+
+    added RenderViewToString class to convertors neet to add package
+
+[33mcommit b697b50cb8bcba9725bc480ac92d4e630deda978[m
+Author: Alireza Ghiasy-L <sina121gh@gmail.com>
+Date:   Sun Feb 18 21:08:21 2024 +0330
+
+    added logout action
+
+[33mcommit 068843f3857e96748c911053bed004603b1829b6[m
+Author: Alireza Ghiasy <sina121gh@gmail.com>
+Date:   Sun Feb 18 15:41:45 2024 +0330
+
+    added authentication for user
+
+[33mcommit 20880572cafc70a7e404848af8bfdff36a4b6753[m
+Author: Alireza Ghiasy <118561256+sina121gh@users.noreply.github.com>
+Date:   Sun Feb 18 14:49:54 2024 +0330
+
+    Create .gitignore
+    
+    added .gitignore file
+
+[33mcommit 7de8556afff903acc51453112cfdbbe00ddf2903[m
+Author: Alireza Ghiasy-L <sina121gh@gmail.com>
+Date:   Fri Feb 16 21:31:53 2024 +0330
+
+    added active account action
+
+[33mcommit aed76ddb78eb09aea43eda741626aba3084a721e[m
+Author: Alireza Ghiasy-L <sina121gh@gmail.com>
+Date:   Fri Feb 16 21:01:16 2024 +0330
+
+    added login action
+
+[33mcommit 2b2821c8a1ad488253884d1b9e60918e299cc975[m
+Author: Alireza Ghiasy-L <sina121gh@gmail.com>
+Date:   Fri Feb 16 20:08:10 2024 +0330
+
+    added login view
+
+[33mcommit 3fc6d2cb49f2aea955636df4b2fb5e8e1290ab02[m
+Author: Alireza Ghiasy-L <sina121gh@gmail.com>
+Date:   Fri Feb 16 19:47:52 2024 +0330
+
+    completed sign up for users
+
+[33mcommit c8cf8ca40d0a3904506d90480a5b53d1cd79ea34[m
+Author: Alireza Ghiasy-L <sina121gh@gmail.com>
+Date:   Fri Feb 16 19:08:10 2024 +0330
+
+    added validation for userName and email
+
+[33mcommit e1e34c3fa11f903637eaf988bd55e6d6cf8fefaa[m
+Author: Alireza Ghiasy-L <sina121gh@gmail.com>
+Date:   Fri Feb 16 18:56:56 2024 +0330
+
+    added User Service
+
+[33mcommit f3186c857761e9ff299474a12d02bb7f0352cd1e[m
+Author: Alireza Ghiasy-L <sina121gh@gmail.com>
+Date:   Fri Feb 16 16:52:37 2024 +0330
+
+    added template to project
+
+[33mcommit 41a7db7418316b4d42e967df824a342b097d6b0b[m
+Author: Alireza Ghiasy-L <sina121gh@gmail.com>
+Date:   Fri Feb 16 12:04:19 2024 +0330
+
+    added EFCore Packages fore core datalayer
+
+[33mcommit 880ccdbf6f913783cb1aa9025f52962143321eac[m
+Author: Alireza Ghiasy-L <sina121gh@gmail.com>
+Date:   Fri Feb 16 12:00:45 2024 +0330
+
+    added max length for user avatar and active code
+
+[33mcommit 8803450e367f95ae32633ad8482e7c23ec6bb651[m
+Author: Alireza Ghiasy-L <sina121gh@gmail.com>
+Date:   Fri Feb 16 11:57:31 2024 +0330
+
+    created migreation for init db
+
+[33mcommit f12c67d80eaf1e517ea78fc1a9ec098d35050b41[m
+Author: Alireza Ghiasy-L <sina121gh@gmail.com>
+Date:   Fri Feb 16 11:53:55 2024 +0330
+
+    added DotNetEnv package and added db context in program
+
+[33mcommit 433140f0451081bde9d9871bbeaebe10c2f03fc0[m
+Author: Alireza Ghiasy-L <sina121gh@gmail.com>
+Date:   Fri Feb 16 11:39:30 2024 +0330
+
+    added EFCore to Web class library
+
+[33mcommit 07d3220a0819ac5d7427be05f80a53dd0536c002[m
+Author: Alireza Ghiasy-L <sina121gh@gmail.com>
+Date:   Fri Feb 16 11:34:03 2024 +0330
+
+    added data layer and core reference to web layer
+
+[33mcommit 3be4d5ecc3803ce322ce4987616e5d9d475ebe8f[m
+Author: Alireza Ghiasy-L <sina121gh@gmail.com>
+Date:   Fri Feb 16 11:32:28 2024 +0330
+
+    added context
+
+[33mcommit 2d1b0a85a5d4228a124abf6184d29c5359390706[m
+Author: Alireza Ghiasy-L <sina121gh@gmail.com>
+Date:   Fri Feb 16 11:13:03 2024 +0330
+
+    added user role model and relation between user and user role
+
+[33mcommit b4839eea00c5b786a77ef8519c34da6d63db7688[m
+Author: Alireza Ghiasy-L <sina121gh@gmail.com>
+Date:   Fri Feb 16 11:07:52 2024 +0330
+
+    added user model
+
+[33mcommit e8ba8bcd2ff0555a1d066e8c4134b37fdca5e5a0[m
+Author: Alireza Ghiasy-L <sina121gh@gmail.com>
+Date:   Fri Feb 16 11:00:01 2024 +0330
+
+    added role model
+
+[33mcommit 65effbf9defabc6c7e939e61125d0fccceccea49[m
+Author: Alireza Ghiasy-L <sina121gh@gmail.com>
+Date:   Fri Feb 16 10:53:14 2024 +0330
+
+    added EFCore to project
+
+[33mcommit e76666cb472fc4f38d107c427c6a2d96bfa3e0e4[m
+Author: Alireza Ghiasy-L <sina121gh@gmail.com>
+Date:   Thu Feb 15 08:26:48 2024 +0330
+
+    class libraries and home controller created
