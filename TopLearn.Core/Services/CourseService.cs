@@ -278,7 +278,7 @@ namespace TopLearn.Core.Services
 
         public ShowCoursesListViewModel GetCourses(int pageId = 1, int take = 0, string filter = "",
             string getType = "all", string orderBy = "createDate",
-            int minPrice = 0, int maxPrice = 0, List<int> selectedGroups = null)
+            int minPrice = 0, int? maxPrice = null, List<int> selectedGroups = null)
         {
                 take = 8;
 
@@ -286,6 +286,14 @@ namespace TopLearn.Core.Services
 
             if (!string.IsNullOrEmpty(filter))
                 result = result.Where(c => c.Title.Contains(filter) || c.Tags.Contains(filter));
+
+
+
+            if (minPrice > 0)
+                result = result.Where(c => c.Price >= minPrice);
+
+            if (maxPrice != null)
+                result = result.Where(c => c.Price <= maxPrice);
 
             switch (getType)
             {
@@ -310,12 +318,6 @@ namespace TopLearn.Core.Services
                     result = result.OrderByDescending(c => c.UpdateDate);
                     break;
             }
-
-            if (minPrice > 0)
-                result = result.Where(c => c.Price >= minPrice);
-
-            if (maxPrice > 0)
-                result = result.Where(c => c.Price <= maxPrice);
 
             if (selectedGroups != null && selectedGroups.Any())
             {
@@ -733,6 +735,15 @@ namespace TopLearn.Core.Services
         public async Task<int> GetCourseCountAsync()
         {
             return await _context.Courses.CountAsync();
+        }
+
+        public async Task<int?> GetTheHighestPriceOfCoursesAsync()
+        {
+            var course = await _context.Courses
+                .OrderByDescending(c => c.Price)
+                .FirstOrDefaultAsync();
+
+            return course?.Price;
         }
     }
 }

@@ -42,7 +42,7 @@ namespace TopLearn.Core.Services.Interfaces
         Course GetCourseForShowDetails(int courseId);
 
         ShowCoursesListViewModel GetCourses(int pageId = 1, int take = 0, string filter = "", string getType = "all",
-            string orderBy = "createDate", int minPrice = 0, int maxPrice = 0, List<int> selectedGroups = null);
+            string orderBy = "createDate", int minPrice = 0, int? maxPrice = null, List<int> selectedGroups = null);
 
         CoursesListForAdminViewModel GetCoursesForAdmin(int take = 10, int pageId = 1);
 
@@ -59,6 +59,7 @@ namespace TopLearn.Core.Services.Interfaces
         Task<bool> DoesAnyoneHaveThisCourseAsync(int courseId);
 
         int GetCourseTeacherId(int courseId);
+        Task<int?> GetTheHighestPriceOfCoursesAsync();
 
         string GetCourseTitleById(int courseId);
 

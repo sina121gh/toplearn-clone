@@ -68,15 +68,13 @@
                     <section class="aside-section filter-by-price">
                         <header><h3> فیلتر بر اساس قیمت </h3></header>
                         <div class="price-range">
-                            <input type="hidden" value="" id="min-value" name="minPrice">
-                            <input type="hidden" value="" id="max-value" name="maxPrice">
+                            <input type="hidden" id="min-value" name="minPrice">
+                            <input type="hidden" id="max-value" name="maxPrice">
                             <div class="price-bar"><div id="priceFilter"></div></div>
-                            @if (Model.Courses.Any())
-                            {
-                                <div class="max-price">تا <span id="max-text">@Model.Courses?.OrderByDescending(c => c.Price).First().Price</span> تومان</div>
-                                <div class="min-price">از <span id="min-text">@Model.Courses?.OrderBy(c => c.Price).First().Price</span> تومان</div>
-                            }
-                                
+
+                            <div class="max-price">تا <span id="max-text"></span> تومان</div>
+                            <div class="min-price">از <span id="min-text"></span> تومان</div>
+
                             <div class="clearfix"></div>
                         </div>
                     </section>
@@ -170,22 +168,43 @@
             $("form").submit();
         }
 
-        $(function () {
+        var marginMin = document.getElementById('min-text'),
+                marginMax = document.getElementById('max-text');
 
+        const url = new URL(window.location.href);
+        const params = new URLSearchParams(url.search);
+
+        var minValue = 0;
+        var maxValue = 10000000;
+
+        if(params.get('minPrice')){
+            minValue = params.get('minPrice');
+            $('#min-value').val(minValue);
+        }
+
+        if (params.get('maxPrice')){
+            maxValue = params.get('maxPrice')
+            $('#max-value').val(maxValue);
+        }
+
+        console.log(minValue);
+        console.log(maxValue);
+
+
+        $(function () {
             var slider = document.getElementById('priceFilter');
             noUiSlider.create(slider, {
-                start: [20000, 100000],
+                start: [minValue, maxValue],
                 step: 5000,
                 connect: true,
                 direction: 'rtl',
                 range: {
-                    'min': 20000,
-                    'max': 100000
+                    'min': 0,
+                    'max': 10000000
                 }
             });
 
-            var marginMin = document.getElementById('min-text'),
-                marginMax = document.getElementById('max-text');
+
 
             slider.noUiSlider.on('update', function (values, handle) {
                 var xvalue = Math.round(values[handle]);
@@ -213,6 +232,7 @@
 
                 console.log(values[0]);
                 console.log(values[1]);
+
 
                 var xvalue = Math.round(values[handle]);
                 //updateSliderRange( Math.round(values[0]), Math.round(values[1]) );
