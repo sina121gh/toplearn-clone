@@ -7,6 +7,8 @@
     ViewData["Title"] = "پرسش " + Model.Question.Title;
     var courseTitle = _courseService.GetCourseTitleById(Model.Question.CourseId);
 }
+<link href="/ckeditor5/ckeditor5.css" rel="stylesheet" />
+
 <style>
     .true-answer {
         border: 2px solid green !important;
@@ -118,12 +120,26 @@
 
 @section Scripts
 {
-    <script src="https://cdn.ckeditor.com/4.15.1/standard/ckeditor.js"></script>
+
+    <script type="importmap">
+        {
+          "imports": {
+            "ckeditor5": "/ckeditor5/ckeditor5.js",
+            "ckeditor5/": "/ckeditor5/"
+          }
+        }
+    </script>
+
+    <script type="module" src="/js/ckeditor-init.js"></script>
     <script>
 
-        CKEDITOR.replace('body', {
-            customConfig: '/js/ckeditorConfig.js'
+        document.addEventListener('DOMContentLoaded', () => {
+            window.initCKEditor('#body');
         });
+    </script>
+    <script>
+
+
 
         function editAnswer(questionId, answerId) {
             fetch(`/questions/${questionId}/answers/${answerId}`)

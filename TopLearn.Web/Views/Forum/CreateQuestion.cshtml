@@ -1,8 +1,12 @@
 ﻿@using TopLearn.DataLayer.Entities.Questions
+
 @model Question
 @{
     ViewData["Title"] = "ایجاد سوال";
+    
 }
+<link href="/ckeditor5/ckeditor5.css" rel="stylesheet" />
+
 
 <div class="container">
     <nav aria-label="breadcrumb">
@@ -30,7 +34,7 @@
 
                 <div class="form-group">
                     <label asp-for="Body" class="control-label"></label>
-                    <textarea style="resize: vertical;" asp-for="Body" class="form-control">
+                    <textarea style="resize: vertical;" asp-for="Body" class="form-control" id="body">
                     </textarea>
                     <span asp-validation-for="Body" class="text-danger"></span>
                 </div>
@@ -45,12 +49,21 @@
 </div>
 
 @section Scripts {
-    <script src="https://cdn.ckeditor.com/4.22.1/standard/ckeditor.js"></script>
-    <script src="/js/ckeditor.js"></script>
+    <script type="importmap">
+        {
+          "imports": {
+            "ckeditor5": "/ckeditor5/ckeditor5.js",
+            "ckeditor5/": "/ckeditor5/"
+          }
+        }
+    </script>
+    <script type="module" src="/js/ckeditor-init.js"></script>
     <script>
-
-        CKEDITOR.replace('Body', {
-            customConfig: '/js/ckeditorConfig.js'
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            window.initCKEditor('#body');
         });
     </script>
+    
+
 }
