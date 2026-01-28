@@ -25,6 +25,7 @@ namespace TopLearn.Core.Services.Interfaces
         #region Answer
 
         bool AddAnswer(Answer answer);
+        bool UpdateAnswer(Answer answer);
         bool ChangeTrueAnswer(int questionId, int answerId);
         Answer? GetAnswerById(int questionId, int answerId);
 

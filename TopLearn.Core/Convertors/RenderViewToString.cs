@@ -59,7 +59,7 @@ namespace TopLearn.Convertors
                     new HtmlHelperOptions()
                 );
 
-                 viewResult.View.RenderAsync(viewContext);
+                viewResult.View.RenderAsync(viewContext);
                 return sw.ToString();
             }
         }

@@ -16,12 +16,14 @@ namespace TopLearn.Web.Pages.Courses
 
         public CoursesListForAdminViewModel CoursesViewModel { get; set; }
 
-        [BindProperty]
+        [BindProperty(SupportsGet = true)]
         public int TakeCount { get; set; } = 10;
 
-        public void OnGet()
+        public void OnGet(int take = 10, int pageId = 1)
         {
-            CoursesViewModel = _courseService.GetCoursesForAdmin();
+            if (TakeCount > 0)
+                take = TakeCount;
+            CoursesViewModel = _courseService.GetCoursesForAdmin(take, pageId);
         }
     }
 }

@@ -32,9 +32,10 @@
                     <div class="col-sm-12 col-md-12">
                         <form>
                             <div class="row mb-3">
+                                <input id="pageId" type="hidden" name="pageId" />
 
                                 <div class="col-2">
-                                    <input name="take" type="number" class="form-control form-control-sm" placeholder="تعداد نمایش" />
+                                    <input asp-for="TakeCount" type="number" class="form-control form-control-sm" placeholder="تعداد نمایش" />
                                 </div>
                                 <div class="col-2">
                                     <div class="row">
@@ -42,7 +43,7 @@
                                             <button type="submit" class="btn btn-info btn-sm">جستجو</button>
                                         </div>
                                         <div class="col-4">
-                                            <a href="/admin/users" class="btn btn-sm btn-outline-dark">ریست</a>
+                                            <a href="/admin/roles" class="btn btn-sm btn-outline-dark">ریست</a>
                                         </div>
                                     </div>
                                 </div>
@@ -124,6 +125,15 @@
 
 @section Scripts {
     <script>
+
+        function changePage(pageId) {
+            $('#pageId').val(pageId);
+            loadCourses();
+          }
+
+        function loadCourses() {
+            $("form").submit();
+        }
 
         function showDeleteSwal(id, title, forceDelete) {
             Swal.fire({

@@ -103,7 +103,7 @@ namespace TopLearn.Web.Controllers
         [Route("courses/{courseId}/questions/{questionId}/answers")]
         [Authorize]
         [HttpPost]
-        public IActionResult Answer(int courseId, int questionId, string body)
+        public IActionResult Answer(int courseId, int questionId, string body, int answerId)
         {
             if (!string.IsNullOrEmpty(body))
             {
@@ -117,13 +117,27 @@ namespace TopLearn.Web.Controllers
 
                 if (question.CourseId != courseId)
                     return BadRequest();
-                _forumService.AddAnswer(new Answer()
+                if (answerId == 0)
                 {
-                    Body = body,
-                    CreateDate = DateTime.Now,
-                    QuestionId = questionId,
-                    UserId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)),
-                });
+                    _forumService.AddAnswer(new Answer()
+                    {
+                        Body = body,
+                        CreateDate = DateTime.Now,
+                        QuestionId = questionId,
+                        UserId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)),
+                    });
+                }
+                else
+                {
+                    Answer? answer = _forumService.GetAnswerById(questionId, answerId);
+                    if (answer == null)
+                        return NotFound();
+
+                    if (answer.UserId != int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)))
+                        return Forbid();
+
+                    _forumService.UpdateAnswer(answer);
+                }
             }
             return Redirect($"/courses/{courseId}/questions/{questionId}");
         }

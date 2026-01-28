@@ -280,7 +280,7 @@ namespace TopLearn.Core.Services
             string getType = "all", string orderBy = "createDate",
             int minPrice = 0, int? maxPrice = null, List<int> selectedGroups = null)
         {
-                take = 8;
+            take = 8;
 
             IQueryable<Course> result = _context.Courses;
 
@@ -321,10 +321,7 @@ namespace TopLearn.Core.Services
 
             if (selectedGroups != null && selectedGroups.Any())
             {
-                foreach (int groupId in selectedGroups)
-                {
-                    result = result.Where(c => c.GroupId == groupId || c.SubGroupId == groupId);
-                }
+                result = result.Where(c => selectedGroups.Contains(c.GroupId) || selectedGroups.Contains(c.SubGroupId.Value));
             }
 
             int skip = (pageId - 1) * take;

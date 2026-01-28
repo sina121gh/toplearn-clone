@@ -119,5 +119,18 @@ namespace TopLearn.Core.Services
                 HasPreviousPage = pageId > 1,
             };
         }
+
+        public bool UpdateAnswer(Answer answer)
+        {
+            try
+            {
+                _context.Answers.Update(answer);
+                return _context.SaveChanges() > 0;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
     }
 }

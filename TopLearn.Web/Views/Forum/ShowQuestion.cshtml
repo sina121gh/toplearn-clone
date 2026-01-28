@@ -31,7 +31,7 @@
         <div class="col-md-12 col-sm-12 col-xs-12">
             @if (User.Identity.IsAuthenticated)
             {
-                
+
             }
             <div class="inner">
                 <div class="panel">
@@ -97,9 +97,9 @@
                         <div class="panel-body">
                             <form action="/courses/@Model.Question.CourseId/questions/@Model.Question.Id/answers" method="post">
 
-                                <input type="hidden" name="answerId" value="0" />
+                                <input type="hidden" id="answerId" name="answerId" value="0" />
                                 <div class="form-group">
-                                    <textarea id='body' name="body" required></textarea>
+                                    <textarea id='body' name="body"></textarea>
                                     <button class="btn btn-block btn-success" style="margin-top: 20px; height: 50px; font-size:15px;" type="submit">ثبت پاسخ شما</button>
                                 </div>
                             </form>
@@ -141,12 +141,20 @@
 
 
 
-        function editAnswer(questionId, answerId) {
-            fetch(`/questions/${questionId}/answers/${answerId}`)
-                .then(response => response.json())
-                .then(data => $('#body').val(data.body))
-                .catch(error => console.error('Error:', error));
-        }
+        // function editAnswer(questionId, answerId) {
+        //     fetch(`/questions/${questionId}/answers/${answerId}`)
+        //         .then(response => response.json())
+        //         .then(data => {
+        //             console.log(data);
+        //             if (CKEDITOR.instances['body']) {
+        //                 CKEDITOR.instances['body'].setData(data.body || '');
+        //             }
+
+
+        //             $('#answerId').val(data.id)
+        //         })
+        //         .catch(error => console.error('Error:', error));
+        // }
 
     </script>
 }

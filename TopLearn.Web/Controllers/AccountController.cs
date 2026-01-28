@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Routing;
 using System.Security.Claims;
+using System.Threading.Tasks;
 using TopLearn.Convertors;
 using TopLearn.Core.Convertors;
 using TopLearn.Core.Generator;
@@ -25,12 +26,13 @@ namespace TopLearn.Web.Controllers
         }
 
         #region Register
+
         [Route("Register")]
         public IActionResult Register() => View();
 
         [HttpPost]
         [Route("Register")]
-        public IActionResult Register(RegisterViewModel register)
+        public async Task<IActionResult> Register(RegisterViewModel register)
         {
             if (!ModelState.IsValid)
                 return View(register);
@@ -47,6 +49,8 @@ namespace TopLearn.Web.Controllers
                 return View(register);
             }
 
+            
+
             string salt = PasswordHelper.GenerateSalt();
             var user = new User()
             {
@@ -60,17 +64,20 @@ namespace TopLearn.Web.Controllers
                 Avatar = "DefaultAvatar.png",
             };
 
+            #region Send Activation Email
+            
+            string emailBody = _viewRender.RenderToStringAsync("_ActiveEmail", user);
+            if (!SendEmail.Send(register.Email, "فعال سازی حساب", emailBody))
+            {
+                return BadRequest("مشکلی در ارسال ایمیل به وجود‌ آمد لطفا بعدا تلاش کنید");
+            }
+
+            #endregion
+
             int userId = _userService.AddUser(user);
 
             if (!_userService.CreateWallet(userId))
                 return BadRequest();
-
-            #region Send Activation Email
-
-            string emailBody = _viewRender.RenderToStringAsync("_ActiveEmail", user);
-            SendEmail.Send(user.Email, "فعال سازی حساب", emailBody);
-
-            #endregion
 
             return View("SuccessRegister", user);
         }
@@ -160,7 +167,7 @@ namespace TopLearn.Web.Controllers
 
         [HttpPost]
         [Route("ForgotPassword")]
-        public IActionResult ForgotPassword(ForgotPasswordViewModel forgot)
+        public async Task<IActionResult> ForgotPassword(ForgotPasswordViewModel forgot)
         {
             if (!ModelState.IsValid)
                 return View(forgot);
