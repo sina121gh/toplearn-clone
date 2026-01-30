@@ -84,6 +84,13 @@ namespace TopLearn.Core.Services
                     "wwwroot",
                     "UsersAvatars",
                     avatarName);
+
+            string directory = Path.GetDirectoryName(imagePath);
+            if (!Directory.Exists(directory))
+            {
+                Directory.CreateDirectory(directory);
+            }
+
             using (FileStream stream = new FileStream(imagePath, FileMode.Create))
             {
                 avatar.CopyTo(stream);
@@ -101,6 +108,13 @@ namespace TopLearn.Core.Services
                     "courses",
                     "demos",
                     demoName);
+
+            string directory = Path.GetDirectoryName(demoPath);
+            if (!Directory.Exists(directory))
+            {
+                Directory.CreateDirectory(directory);
+            }
+
             using (FileStream stream = new FileStream(demoPath, FileMode.Create))
             {
                 demo.CopyTo(stream);
@@ -114,12 +128,20 @@ namespace TopLearn.Core.Services
             //string episodeName = MyGenerator.GenerateCode() + Path.GetExtension(episodeFile.FileName);
             
             string episodePath = Path.Combine(Directory.GetCurrentDirectory(),
-                    "wwwroot/courses/episodes/");
+                    "wwwroot",
+                    "courses",
+                    "episodes");
 
             if (fileName != "")
                 episodePath += fileName;
             else 
                 episodePath += episodeFile.FileName;
+
+            string directory = Path.GetDirectoryName(episodePath);
+            if (!Directory.Exists(directory))
+            {
+                Directory.CreateDirectory(directory);
+            }
 
             using (FileStream stream = new FileStream(episodePath, FileMode.Create))
             {
@@ -141,6 +163,13 @@ namespace TopLearn.Core.Services
                     "courses",
                     "images",
                     imageName);
+
+            string directory = Path.GetDirectoryName(imagePath);
+            if (!Directory.Exists(directory))
+            {
+                Directory.CreateDirectory(directory);
+            }
+
             using (FileStream stream = new FileStream(imagePath, FileMode.Create))
             {
                 image.CopyTo(stream);

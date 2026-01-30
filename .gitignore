@@ -398,3 +398,19 @@ FodyWeavers.xsd
 *.sln.iml
 
 .env
+
+/TopLearn.Web/wwwroot/courses/demos/*
+/TopLearn.Web/wwwroot/courses/episodes/*
+/TopLearn.Web/wwwroot/courses/images/*
+/TopLearn.Web/wwwroot/courses/thumbnails/*
+
+# Keep default images
+!/TopLearn.Web/wwwroot/courses/images/DefaultCourseImage.png
+!/TopLearn.Web/wwwroot/courses/thumbnails/DefaultCourseImage.png
+
+
+/TopLearn.Web/wwwroot/CourseFilesForOnlineShow/*
+/TopLearn.Web/wwwroot/uploadedImages/*
+
+/TopLearn.Web/wwwroot/UsersAvatars/*
+!/TopLearn.Web/wwwroot/UsersAvatars/DefaultAvatar.png
