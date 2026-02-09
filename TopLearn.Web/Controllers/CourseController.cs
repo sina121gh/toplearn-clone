@@ -162,8 +162,11 @@ namespace TopLearn.Web.Controllers
         {
             if (!_courseService.IsCourseFree(courseId))
             {
-                if (!_orderService.IsUserInCourse(User.Identity.Name, courseId))
+                if (!User.Identity.IsAuthenticated)
                     ViewData["AccessDenied"] = false;
+                else
+                    if (!_orderService.IsUserInCourse(User.Identity.Name, courseId))
+                        ViewData["AccessDenied"] = false;
             }
             return PartialView(_courseService.GetCourseVotes(courseId));
         }
