@@ -63,6 +63,17 @@ builder.Services.AddAuthentication(options =>
 
 var app = builder.Build();
 
+#region Migrating Database
+
+using (var serviceScope = app.Services.GetService<IServiceScopeFactory>().CreateScope())
+{
+    var context = serviceScope.ServiceProvider.GetRequiredService<TopLearnContext>();
+    //await context.Database.EnsureCreatedAsync();
+    await context.Database.MigrateAsync();
+}
+
+#endregion
+
 app.Use(async (context, next) =>
 {
     await next();
