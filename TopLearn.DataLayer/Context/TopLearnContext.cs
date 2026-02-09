@@ -73,6 +73,8 @@ namespace TopLearn.DataLayer.Context
         #endregion
 
 
+
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Course>()
@@ -465,6 +467,56 @@ namespace TopLearn.DataLayer.Context
                     Title = "برنامه نویسی ویندوز",
                 }
                 );
+
+            #endregion
+
+            #region User
+
+            modelBuilder.Entity<User>().HasData(
+                new User()
+                {
+                    Id = 1,
+                    Email = "admin@gmail.com",
+                    UserName = "admin",
+                    Salt = "$2a$11$KazSaGYh6zFmgVO.ZXZ48.",
+                    Password = "$2a$11$KazSaGYh6zFmgVO.ZXZ48.Kgf2z8Q18d26stnhHz7hIWLrJO5RndO",
+                    ActiveCode = "71D1AFCD55F94E30A9292121168A8D64",
+                    Avatar = "DefaultAvatar.png",
+                    RegisterDate = new DateTime(2026, 2, 9),
+                    IsActive = true,
+                    IsDeleted = false,
+                });
+
+            #endregion
+
+            #region User Role
+
+            modelBuilder.Entity<UserRole>().HasData(
+                new UserRole()
+                {
+                    Id = 1,
+                    UserId = 1,
+                    RoleId = 1,
+                },
+                new UserRole()
+                {
+                    Id = 2,
+                    UserId = 1,
+                    RoleId = 2,
+                });
+
+            #endregion
+
+            #region Wallet
+
+            modelBuilder.Entity<Wallet>().HasData(
+                new Wallet()
+                {
+                    Id = 1,
+                    UserId = 1,
+                    Balance = 0,
+                    UpdateDate = DateTime.Now,
+                });
 
             #endregion
 
